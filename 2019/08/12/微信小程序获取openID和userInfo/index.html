@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://sunfishfr.github.io">
-  <title>about | Luhan</title>
+  <title>微信小程序获取openID和userInfo | Luhan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="记录个人心情、所学知识等">
-<meta name="keywords" content="个人博客,随笔,心情日记">
-<meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="http://sunfishfr.github.io/about/index.html">
+  <meta name="description" content="1. 获取openID（在app.js）：">
+<meta name="keywords" content="微信小程序">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微信小程序获取openID和userInfo">
+<meta property="og:url" content="http://sunfishfr.github.io/2019/08/12/微信小程序获取openID和userInfo/index.html">
 <meta property="og:site_name" content="Luhan">
-<meta property="og:description" content="记录个人心情、所学知识等">
+<meta property="og:description" content="1. 获取openID（在app.js）：">
 <meta property="og:locale" content="cn">
-<meta property="og:updated_time" content="2019-08-29T06:14:58.663Z">
+<meta property="og:updated_time" content="2019-08-29T10:13:00.019Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="about">
-<meta name="twitter:description" content="记录个人心情、所学知识等">
+<meta name="twitter:title" content="微信小程序获取openID和userInfo">
+<meta name="twitter:description" content="1. 获取openID（在app.js）：">
   
     <link rel="alternative" href="/atom.xml" title="Luhan" type="application/atom+xml">
   
@@ -86,6 +86,8 @@
 				
 					<a class="github" target="_blank" href="https://github.com/sunfishfr" title="github"><i class="icon-github"></i></a>
 		        
+					<a class="jianshu" target="_blank" href="https://www.jianshu.com/u/5e65cdd0484f" title="jianshu"><i class="icon-jianshu"></i></a>
+		        
 			</div>
 		</nav>
 	</header>		
@@ -123,6 +125,8 @@
 					
 						<a class="github" target="_blank" href="https://github.com/sunfishfr" title="github"><i class="icon-github"></i></a>
 			        
+						<a class="jianshu" target="_blank" href="https://www.jianshu.com/u/5e65cdd0484f" title="jianshu"><i class="icon-jianshu"></i></a>
+			        
 				</div>
 			</nav>
 
@@ -147,55 +151,61 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-微信小程序获取openID和userInfo" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      about
+      微信小程序获取openID和userInfo
     </h1>
   
 
         
-        <a href="/about/index.html" class="archive-article-date">
-  	<time datetime="2019-08-29T14:14:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-29</time>
+        <a href="/2019/08/12/微信小程序获取openID和userInfo/" class="archive-article-date">
+  	<time datetime="2019-08-12T12:00:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-12</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
-      
+        <p><strong>1. 获取openID（在app.js）：</strong></p>
+<a id="more"></a>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 全局变量</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  globalData: &#123;</span><br><span class="line">    userInfo: <span class="literal">null</span>,</span><br><span class="line">    appid: <span class="string">'wx08**********2796'</span>, <span class="comment">//appid</span></span><br><span class="line">    secret: <span class="string">'64cd85a****************2c75dfd5'</span>, <span class="comment">//secret</span></span><br><span class="line">    amapKey: <span class="string">'6ef95**********************92021bdf14'</span>, <span class="comment">//高德地图key</span></span><br><span class="line">  &#125;,</span><br><span class="line"><span class="comment">/**获取OpenID */</span></span><br><span class="line">  getOpenId: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> that = <span class="keyword">this</span></span><br><span class="line">    wx.login(&#123;</span><br><span class="line">      success: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (res.code) &#123;</span><br><span class="line">          wx.getUserInfo(&#123;</span><br><span class="line">            success: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">              <span class="built_in">console</span>.log(res.userInfo);</span><br><span class="line">              wx.setStorageSync(<span class="string">'userInfo'</span>, res.userInfo); <span class="comment">//存储userInfo</span></span><br><span class="line">            &#125;</span><br><span class="line">          &#125;);</span><br><span class="line">          <span class="comment">//这里存储了appid、secret、token串  </span></span><br><span class="line">          <span class="keyword">var</span> url = <span class="string">'https://api.weixin.qq.com/sns/jscode2session?appid='</span> + that.globalData.appid + <span class="string">'&amp;secret='</span> + that.globalData.secret + <span class="string">'&amp;js_code='</span> + res.code + <span class="string">'&amp;grant_type=authorization_code'</span>;</span><br><span class="line">          wx.request(&#123;</span><br><span class="line">            url: url,</span><br><span class="line">            data: &#123;&#125;,</span><br><span class="line">            method: <span class="string">'GET'</span>, <span class="comment">// OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT  </span></span><br><span class="line">            <span class="comment">// header: &#123;&#125;, // 设置请求的 header  </span></span><br><span class="line">            success: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">              <span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line">              obj.openid = res.data.openid;</span><br><span class="line">              obj.expires_in = <span class="built_in">Date</span>.now() + res.data.expires_in;</span><br><span class="line">              <span class="built_in">console</span>.log(obj);</span><br><span class="line">              wx.setStorageSync(<span class="string">'user'</span>, obj); <span class="comment">//存储openid  </span></span><br><span class="line">              that.globalData.openid = res.data.openid;</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          <span class="built_in">console</span>.log(<span class="string">'获取用户登录态失败！'</span> + res.errMsg)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>2. 获取userInfo：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**获取用户信息 */</span></span><br><span class="line">  getUserInfo: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    wx.getSetting(&#123;</span><br><span class="line">      success: <span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (res.authSetting[<span class="string">'scope.userInfo'</span>]) &#123;</span><br><span class="line">          <span class="comment">// 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框</span></span><br><span class="line">          wx.getUserInfo(&#123;</span><br><span class="line">            success: <span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">              <span class="comment">// 可以将 res 发送给后台解码出 unionId</span></span><br><span class="line">              <span class="built_in">console</span>.log(<span class="string">"userInfo"</span>, res.userInfo)</span><br><span class="line">              <span class="keyword">this</span>.globalData.userInfo = res.userInfo;</span><br><span class="line"></span><br><span class="line">              <span class="comment">// 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回</span></span><br><span class="line">              <span class="comment">// 所以此处加入 callback 以防止这种情况</span></span><br><span class="line">              <span class="keyword">if</span> (<span class="keyword">this</span>.userInfoReadyCallback) &#123;</span><br><span class="line">                <span class="keyword">this</span>.userInfoReadyCallback(res)</span><br><span class="line">              &#125;</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<blockquote>
+<p><strong>另外</strong>，小程序官方对获取用户信息的说明：为优化用户体验，使用<code>wx.getUserInfo</code> 接口直接弹出授权框的开发方式将逐步不再支持。从2018年4月30日开始，小程序与小游戏的体验版、开发版调用 <code>wx.getUserInfo</code>接口，将无法弹出授权询问框，默认调用失败。正式版暂不受影响。开发者可使用以下方式获取或展示用户信息：</p>
+<p>1、使用 button 组件，并将 open-type 指定为 getUserInfo 类型，获取用户基本信息。</p>
+<p>详情参考文档：<a href="https://developers.weixin.qq.com/miniprogram/dev/component/button.html" target="_blank" rel="noopener">https://developers.weixin.qq.com/miniprogram/dev/component/button.html</a></p>
+<p>2、使用 open-data 展示用户基本信息。</p>
+<p>详情参考文档：<a href="https://developers.weixin.qq.com/miniprogram/dev/component/open-data.html" target="_blank" rel="noopener">https://developers.weixin.qq.com/miniprogram/dev/component/open-data.html</a></p>
+</blockquote>
 
       
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
+
       
     </div>
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">微信小程序</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -246,7 +256,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://sunfishfr.github.io/about/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://sunfishfr.github.io/2019/08/12/微信小程序获取openID和userInfo/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -258,6 +268,25 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2019/08/21/【微信小程序】wx.showToast一闪而过的解决办法/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          【微信小程序】wx.showToast一闪而过的解决办法
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/08/12/根据 sitemap 的规则[0]，当前页面 [pagesindexindex] 将被索引/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">根据 sitemap 的规则[0]，当前页面 [pagesindexindex] 将被索引</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -271,19 +300,6 @@
             </div>
         </div>
         
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    目录，不存在的…
-                    </div>
-                </span>
-            </div>
-        </div>
         
     </div>
 </aside>
@@ -321,7 +337,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
@@ -329,7 +345,7 @@
 		toc_hide_index: true,
 		root: "/",
 		innerArchive: true,
-		showTags: false
+		showTags: true
 	}
 </script>
 
@@ -391,11 +407,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color2">Markdownpad</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">php</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">微信小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
             
             <div class="clearfix"></div>
@@ -447,11 +471,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="https://www.jianshu.com/u/5e65cdd0484f" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
+              <a href="https://www.jianshu.com/u/5e65cdd0484f" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>我的简书</a>
             </li>
           
             <li class="search-li">
-              <a href="https://blog.csdn.net/qq_30750609" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
+              <a href="https://blog.csdn.net/qq_30750609" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>我的csdn</a>
             </li>
           
         </ul>
@@ -462,7 +486,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">90后&lt;br&gt;爱好：唱、跳、rap、篮球&lt;br&gt;&lt;br&gt;谢谢大家&lt;br&gt;</div>
   	  	
     	</section>
     

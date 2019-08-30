@@ -6,29 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://sunfishfr.github.io">
-  <title>phpMyAdmin连接MySQL8.0报错为：#2054 无法登录 MySQL 服务器 | Luhan</title>
+  <title>【微信小程序】wx.showToast一闪而过的解决办法 | Luhan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="phpMyAdmin连接MySQL8.0报错为：#2054 无法登录 MySQL 服务器一、报错场景：">
-<meta name="keywords" content="php">
+  <meta name="description" content="场景一：新增门店数据成功，需要用wx.showToast显示新增成功后返回上一个界面，但此时基本没显示（一闪而过），直接跳转了。">
+<meta name="keywords" content="微信小程序">
 <meta property="og:type" content="article">
-<meta property="og:title" content="phpMyAdmin连接MySQL8.0报错为：#2054 无法登录 MySQL 服务器">
-<meta property="og:url" content="http://sunfishfr.github.io/2019/07/15/phpMyAdmin连接MySQL8.0报错为：#2054 无法登录 MySQL 服务器/index.html">
+<meta property="og:title" content="【微信小程序】wx.showToast一闪而过的解决办法">
+<meta property="og:url" content="http://sunfishfr.github.io/2019/08/21/【微信小程序】wx.showToast一闪而过的解决办法/index.html">
 <meta property="og:site_name" content="Luhan">
-<meta property="og:description" content="phpMyAdmin连接MySQL8.0报错为：#2054 无法登录 MySQL 服务器一、报错场景：">
+<meta property="og:description" content="场景一：新增门店数据成功，需要用wx.showToast显示新增成功后返回上一个界面，但此时基本没显示（一闪而过），直接跳转了。">
 <meta property="og:locale" content="cn">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1303496-6692d037b3b5861a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1303496-44aa4b3e904142fd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1303496-08c7e2f88cba9d95.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1303496-f605fee04164c7e7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1303496-e421de9d7454e507.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1303496-b8aecda6d521f64f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1303496-d9e05b3ef05d5d4c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1303496-02fb84a3866a3506.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-08-29T10:09:59.523Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1303496-edd0ab09eee946de.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1303496-078561393a65e0cc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2019-08-29T10:14:18.395Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="phpMyAdmin连接MySQL8.0报错为：#2054 无法登录 MySQL 服务器">
-<meta name="twitter:description" content="phpMyAdmin连接MySQL8.0报错为：#2054 无法登录 MySQL 服务器一、报错场景：">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/1303496-6692d037b3b5861a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:title" content="【微信小程序】wx.showToast一闪而过的解决办法">
+<meta name="twitter:description" content="场景一：新增门店数据成功，需要用wx.showToast显示新增成功后返回上一个界面，但此时基本没显示（一闪而过），直接跳转了。">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/1303496-edd0ab09eee946de.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternative" href="/atom.xml" title="Luhan" type="application/atom+xml">
   
@@ -160,98 +154,44 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-phpMyAdmin连接MySQL8.0报错为：#2054 无法登录 MySQL 服务器" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-【微信小程序】wx.showToast一闪而过的解决办法" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      phpMyAdmin连接MySQL8.0报错为：#2054 无法登录 MySQL 服务器
+      【微信小程序】wx.showToast一闪而过的解决办法
     </h1>
   
 
         
-        <a href="/2019/07/15/phpMyAdmin连接MySQL8.0报错为：#2054 无法登录 MySQL 服务器/" class="archive-article-date">
-  	<time datetime="2019-07-15T12:30:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-15</time>
+        <a href="/2019/08/21/【微信小程序】wx.showToast一闪而过的解决办法/" class="archive-article-date">
+  	<time datetime="2019-08-21T12:05:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-21</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="phpMyAdmin连接MySQL8-0报错为：-2054-无法登录-MySQL-服务器"><a href="#phpMyAdmin连接MySQL8-0报错为：-2054-无法登录-MySQL-服务器" class="headerlink" title="phpMyAdmin连接MySQL8.0报错为：#2054 无法登录 MySQL 服务器"></a>phpMyAdmin连接MySQL8.0报错为：#2054 无法登录 MySQL 服务器</h1><h3 id="一、报错场景："><a href="#一、报错场景：" class="headerlink" title="一、报错场景："></a>一、报错场景：</h3><a id="more"></a>
-<p><img src="https://upload-images.jianshu.io/upload_images/1303496-6692d037b3b5861a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="#2054无法登陆Mysql服务器.png" title="报错图片"></p>
-<h3 id="二、报错原因："><a href="#二、报错原因：" class="headerlink" title="二、报错原因："></a>二、报错原因：</h3><blockquote>
-<p>由于mysql8.0默认使用了新的密码验证插件<code>caching_sha2_password</code>，而之前的PHP版本中所带的mysqlnd不能支持新的验证方式。</p>
-</blockquote>
-<h3 id="三、解决方式："><a href="#三、解决方式：" class="headerlink" title="三、解决方式："></a>三、解决方式：</h3><table>
-<thead>
-<tr>
-<th align="center">序号</th>
-<th align="center">解决思路</th>
-<th align="center">具体操作</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">1</td>
-<td align="center">PHP</td>
-<td align="center">升级PHP版本（具体我也不知道哪个版本）</td>
-</tr>
-<tr>
-<td align="center">2</td>
-<td align="center">mysql</td>
-<td align="center">修改mysql的<code>my.cnf（linux下）</code>或者<code>my.ini(windows下)</code>，修改验证方式为<code>mysql_native_password</code></td>
-</tr>
-<tr>
-<td align="center">—</td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">##### 下面，我们使用第二种方式来解决（以windows下为例）：</td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">###### 1.修改my.ini文件</td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-</tbody></table>
-<blockquote>
+        <h3 id="场景一："><a href="#场景一：" class="headerlink" title="场景一："></a>场景一：</h3><p>新增门店数据成功，需要用<code>wx.showToast</code>显示<code>新增成功</code>后返回上一个界面，但此时基本没显示（一闪而过），直接跳转了。</p>
+<a id="more"></a>
 <ul>
-<li>找到文件位置<br><img src="https://upload-images.jianshu.io/upload_images/1303496-44aa4b3e904142fd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="my.ini文件位置.png" title="my.ini文件位置"></li>
-<li>添加下面两句<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; #更改为原来的验证方式</span><br><span class="line">&gt; default_authentication_plugin= mysql_native_password</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<li><p><strong>原因：</strong><br><code>wx.showToast</code>只会在当前页面显示，新页面不显示。<br><img src="https://upload-images.jianshu.io/upload_images/1303496-edd0ab09eee946de.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="wx.showToast只会在当前页面显示"></p>
+</li>
+<li><p><strong>解决方法：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">wx.showToast(&#123;</span><br><span class="line">              title: <span class="string">'新增成功'</span>,</span><br><span class="line">              icon: <span class="string">'success'</span>,</span><br><span class="line">              duration: <span class="number">1000</span>,</span><br><span class="line">              mask: <span class="literal">true</span>,</span><br><span class="line">              success: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                  <span class="comment">//要延时执行的代码</span></span><br><span class="line">                  wx.navigateBack(&#123;</span><br><span class="line">                    delta: <span class="number">1</span></span><br><span class="line">                  &#125;)</span><br><span class="line">                &#125;, <span class="number">1000</span>) <span class="comment">//延迟时间</span></span><br><span class="line">              &#125;,</span><br><span class="line">            &#125;);</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
-</blockquote>
-<blockquote>
-<p><img src="https://upload-images.jianshu.io/upload_images/1303496-08c7e2f88cba9d95.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="修改my.ini文件内容.png" title="修改my.ini文件内容"></p>
-</blockquote>
-<h6 id="2-重启mysql服务"><a href="#2-重启mysql服务" class="headerlink" title="2.重启mysql服务"></a>2.重启mysql服务</h6><blockquote>
+<hr>
+<h3 id="场景二："><a href="#场景二：" class="headerlink" title="场景二："></a>场景二：</h3><p>修改了头像，上传头像的时候使用了<code>wx.showLoading()</code>，结束的时候使用<code>wx.hideLoading()</code>，再用<code>wx.showToast</code>想显示<code>修改成功</code>，但是一闪而过。</p>
 <ul>
-<li>这里提供一种windows下我常用的方式，打开任务管理器，直接在服务里搜索mysql服务，右键停止后再启动。<br><img src="https://upload-images.jianshu.io/upload_images/1303496-f605fee04164c7e7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="重启mysql服务.png" title="windows下不用命令重启mysql服务"></li>
-</ul>
-</blockquote>
-<h6 id="3-重新尝试"><a href="#3-重新尝试" class="headerlink" title="3.重新尝试"></a>3.重新尝试</h6><blockquote>
-<ul>
-<li>用PHPMyAdmin登录管理mysql，如果还是不行，可能是因为密码已经是sha2方式保存的，所以php原来的&gt; 验证方式还是不能通过，这里我们再修改一下密码。<br>在cmd登录mysql后，相关命令：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; mysql -uroot -p </span><br><span class="line">&gt; use mysql；</span><br><span class="line">&gt; ALTER USER &apos;root&apos;@&apos;localhost&apos; IDENTIFIED WITH mysql_native_password BY &apos;Root@123&apos;;  </span><br><span class="line">&gt; FLUSH PRIVILEGES;  </span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<li><p><strong>原因：</strong><br><img src="https://upload-images.jianshu.io/upload_images/1303496-078561393a65e0cc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="微信小程序"></p>
+</li>
+<li><p><strong>解决方法：</strong><br>wx.hideLoading()会关闭同级中的wx.showLoading 或 wx.showToast<br>所以要在showToast之前调用wx.hideLoading</p>
 </li>
 </ul>
-</blockquote>
-<blockquote>
-<p><img src="https://upload-images.jianshu.io/upload_images/1303496-e421de9d7454e507.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="cmd操作mysql.png" title="操作mysql"></p>
-<hr>
-<ul>
-<li>这里需要注意，我刚开始改密码，用的123456，结果一直报错（如下图）。后来才知道mysql8.0安全密码策略提高了，要大小写加数字特殊符号。<br><img src="https://upload-images.jianshu.io/upload_images/1303496-b8aecda6d521f64f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="改密码报错.png" title="改密码报错"></li>
-</ul>
-<hr>
-<ul>
-<li>可以查看一下当前的密码验证方式<br><code>select User,plugin from user where User = &#39;root&#39;;</code><br><img src="https://upload-images.jianshu.io/upload_images/1303496-d9e05b3ef05d5d4c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="查看密码验证方式.png"></li>
-</ul>
-</blockquote>
-<p>$\color{blue}{这下应该就搞定了，重新尝试即可。}$<br><img src="https://upload-images.jianshu.io/upload_images/1303496-02fb84a3866a3506.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image" title="要赞"></p>
 
       
 
@@ -265,7 +205,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">微信小程序</a>
         		</li>
       		
 		</ul>
@@ -321,7 +261,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://sunfishfr.github.io/2019/07/15/phpMyAdmin连接MySQL8.0报错为：#2054 无法登录 MySQL 服务器/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://sunfishfr.github.io/2019/08/21/【微信小程序】wx.showToast一闪而过的解决办法/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -335,18 +275,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/08/12/根据 sitemap 的规则[0]，当前页面 [pagesindexindex] 将被索引/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/08/23/【微信小程序】我们来聊聊用vscode开发工具/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          根据 sitemap 的规则[0]，当前页面 [pagesindexindex] 将被索引
+          【微信小程序】我们来聊聊用vscode开发工具
         
       </div>
     </a>
   
   
-    <a href="/2019/07/10/Markdownpad-2不支持表格语法/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Markdownpad 2不支持表格语法</div>
+    <a href="/2019/08/12/微信小程序获取openID和userInfo/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">微信小程序获取openID和userInfo</div>
       <i class="icon-circle-right"></i>
     </a>
   
