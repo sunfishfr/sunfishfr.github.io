@@ -7,19 +7,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://sunfishfr.github.io">
-  <title>Tag: php | Luhan</title>
+  <title>【微信小程序】实现分页加载 | Luhan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="记录个人心情、所学知识等">
-<meta name="keywords" content="个人博客,随笔,心情日记">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Luhan">
-<meta property="og:url" content="http://sunfishfr.github.io/tags/php/index.html">
+  <meta name="description" content="一、效果">
+<meta name="keywords" content="微信小程序">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【微信小程序】实现分页加载">
+<meta property="og:url" content="http://sunfishfr.github.io/2019/09/09/【微信小程序】实现分页加载/index.html">
 <meta property="og:site_name" content="Luhan">
-<meta property="og:description" content="记录个人心情、所学知识等">
+<meta property="og:description" content="一、效果">
 <meta property="og:locale" content="cn">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190909095403159.png">
+<meta property="og:updated_time" content="2019-09-09T03:03:23.987Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Luhan">
-<meta name="twitter:description" content="记录个人心情、所学知识等">
+<meta name="twitter:title" content="【微信小程序】实现分页加载">
+<meta name="twitter:description" content="一、效果">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190909095403159.png">
   
     <link rel="alternative" href="/atom.xml" title="Luhan" type="application/atom+xml">
   
@@ -151,60 +154,177 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-【微信小程序】实现分页加载" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/15/phpMyAdmin连接MySQL8.0报错为：#2054 无法登录 MySQL 服务器/" class="archive-article-date">
-  	<time datetime="2019-07-15T12:30:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-15</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/15/phpMyAdmin连接MySQL8.0报错为：#2054 无法登录 MySQL 服务器/">phpMyAdmin连接MySQL8.0报错为：#2054 无法登录 MySQL 服务器</a>
+    <h1 class="article-title" itemprop="name">
+      【微信小程序】实现分页加载
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/09/09/【微信小程序】实现分页加载/" class="archive-article-date">
+  	<time datetime="2019-09-09T11:02:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一、效果"><a href="#一、效果" class="headerlink" title="一、效果"></a>一、效果</h3><p><img src="https://img-blog.csdnimg.cn/20190909095403159.png" alt="已加载全部"></p>
+<a id="more"></a>
+<h3 id="二、步骤"><a href="#二、步骤" class="headerlink" title="二、步骤"></a>二、步骤</h3><p><strong>1. wxml中</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"loading"</span> <span class="attr">hidden</span>=<span class="string">"&#123;&#123;!searchLoading&#125;&#125;"</span>&gt;</span>正在载入更多...<span class="tag">&lt;/<span class="name">view</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"loading"</span> <span class="attr">hidden</span>=<span class="string">"&#123;&#123;!searchLoadingComplete&#125;&#125;"</span>&gt;</span>已加载全部<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>2. wxss中</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.loading</span>&#123;  </span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">10</span>rpx;  </span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">26</span>rpx;</span><br><span class="line">  <span class="attribute">color</span>:<span class="number">#666</span>;</span><br><span class="line">  <span class="attribute">text-align</span>: center;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>3. json文件中，开启下拉刷新</strong></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"usingComponents"</span>: &#123;&#125;,</span><br><span class="line">  <span class="attr">"navigationBarTitleText"</span>: <span class="string">"日常管理"</span>,</span><br><span class="line">  <span class="attr">"enablePullDownRefresh"</span>: <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>4. js中</strong></p>
+<p>①添加这几个变量</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">data: &#123;</span><br><span class="line">    pageNo: <span class="number">1</span>, <span class="comment">// 设置加载的第几次，默认是第一次  </span></span><br><span class="line">    pageSize: <span class="number">10</span>, <span class="comment">//返回数据的个数  </span></span><br><span class="line">    searchLoading: <span class="literal">false</span>, <span class="comment">//"上拉加载"的变量，默认false，隐藏  </span></span><br><span class="line">    searchLoadingComplete: <span class="literal">false</span> <span class="comment">//“没有数据”的变量，默认false，隐藏  </span></span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+
+<p>②加载数据方式用下拉的方式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 生命周期函数--监听页面加载</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  onLoad: <span class="function"><span class="keyword">function</span>(<span class="params">options</span>) </span>&#123;</span><br><span class="line">    wx.startPullDownRefresh();</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+
+<p>③相关函数处理</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 页面相关事件处理函数--监听用户下拉动作</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  onPullDownRefresh: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.setData(&#123;</span><br><span class="line">      pageNo: <span class="number">1</span>,</span><br><span class="line">      storelist:[],</span><br><span class="line">      searchLoading: <span class="literal">true</span>, <span class="comment">//"上拉加载"的变量，默认false，隐藏  </span></span><br><span class="line">      searchLoadingComplete: <span class="literal">false</span> <span class="comment">//“没有数据”的变量，默认false，隐藏  </span></span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">this</span>.getShopList();</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 页面上拉触底事件的处理函数</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">onReachBottom: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (!<span class="keyword">this</span>.data.searchLoadingComplete)&#123;</span><br><span class="line">    <span class="keyword">var</span> currentPageNo = <span class="keyword">this</span>.data.pageNo;</span><br><span class="line">    <span class="keyword">this</span>.setData(&#123;</span><br><span class="line">      pageNo: currentPageNo + <span class="number">1</span>,</span><br><span class="line"></span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">this</span>.getShopList();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<p>④请求参数中加入</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'pageNo'</span>: _this.data.pageNo,</span><br><span class="line"><span class="string">'pageSize'</span>: _this.data.pageSize,</span><br></pre></td></tr></table></figure>
+
+<p>⑤请求成功处理回调</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params">result</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (_this.data.pageNo==<span class="number">1</span>)&#123;</span><br><span class="line">          wx.stopPullDownRefresh();<span class="comment">//下拉刷新收起来</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'success'</span>, result.retailList);</span><br><span class="line">        <span class="keyword">if</span> (result.retailList.length&lt;_this.data.pageSize)&#123;<span class="comment">//小于个数，表示没有更多了</span></span><br><span class="line">          _this.setData(&#123;</span><br><span class="line">            searchLoading: <span class="literal">false</span>,</span><br><span class="line">            searchLoadingComplete :<span class="literal">true</span></span><br><span class="line">          &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">        _this.setData(&#123;</span><br><span class="line">          storelist: _this.data.storelist.concat(result.retailList)</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">微信小程序</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://sunfishfr.github.io/2019/09/09/【微信小程序】实现分页加载/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2019/08/27/百度搜索有广告？不存在的。/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">百度搜索有广告？不存在的。</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -227,9 +347,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
