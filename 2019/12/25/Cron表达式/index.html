@@ -6,33 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://sunfishfr.github.io">
-  <title>【微信小程序】发布流程及发布审核时如何提供测试账号？ | Luhan</title>
+  <title>Cron表达式 | Luhan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="小程序发布流程，大概分三个大步骤：  上传代码 提交审核 发布版本">
-<meta name="keywords" content="微信小程序">
+  <meta name="description" content="[toc] 1. Cron表达式介绍​    Cron表达式是一个字符串，字符串以5或6个空格隔开，分为6或7个域，每一个域代表一个含义。 2. 如何使用 语法格式：  Seconds Minutes Hours DayofMonth Month DayofWeek Year Seconds Minutes Hours DayofMonth Month DayofWeek">
+<meta name="keywords" content="Cron">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【微信小程序】发布流程及发布审核时如何提供测试账号？">
-<meta property="og:url" content="http://sunfishfr.github.io/2019/08/26/【微信小程序】发布流程及发布审核时如何提供测试账号/index.html">
+<meta property="og:title" content="Cron表达式">
+<meta property="og:url" content="http://sunfishfr.github.io/2019/12/25/Cron表达式/index.html">
 <meta property="og:site_name" content="Luhan">
-<meta property="og:description" content="小程序发布流程，大概分三个大步骤：  上传代码 提交审核 发布版本">
+<meta property="og:description" content="[toc] 1. Cron表达式介绍​    Cron表达式是一个字符串，字符串以5或6个空格隔开，分为6或7个域，每一个域代表一个含义。 2. 如何使用 语法格式：  Seconds Minutes Hours DayofMonth Month DayofWeek Year Seconds Minutes Hours DayofMonth Month DayofWeek">
 <meta property="og:locale" content="cn">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1303496-2ebc564000c0c94f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1303496-3811ad6e78b9ebd4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1303496-7131fd92bcac8322.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1303496-dff6416be5adfb53.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1303496-8c05d28e69b0e2a9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1303496-f3cc600532fb4700.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1303496-fb78d31df4bc8d45.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1303496-aa9465a9497a2bbd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1303496-dd975bf5a90c20c5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1303496-eac74424eb80e70b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1303496-06f3fd978b125103.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1303496-da54f6f34aaff37a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-08-29T08:24:14.754Z">
+<meta property="og:updated_time" content="2019-12-24T11:02:13.202Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【微信小程序】发布流程及发布审核时如何提供测试账号？">
-<meta name="twitter:description" content="小程序发布流程，大概分三个大步骤：  上传代码 提交审核 发布版本">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/1303496-2ebc564000c0c94f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:title" content="Cron表达式">
+<meta name="twitter:description" content="[toc] 1. Cron表达式介绍​    Cron表达式是一个字符串，字符串以5或6个空格隔开，分为6或7个域，每一个域代表一个含义。 2. 如何使用 语法格式：  Seconds Minutes Hours DayofMonth Month DayofWeek Year Seconds Minutes Hours DayofMonth Month DayofWeek">
   
     <link rel="alternative" href="/atom.xml" title="Luhan" type="application/atom+xml">
   
@@ -178,63 +165,195 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-【微信小程序】发布流程及发布审核时如何提供测试账号" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Cron表达式" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      【微信小程序】发布流程及发布审核时如何提供测试账号？
+      Cron表达式
     </h1>
   
 
         
-        <a href="/2019/08/26/【微信小程序】发布流程及发布审核时如何提供测试账号/" class="archive-article-date">
-  	<time datetime="2019-08-26T12:45:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-26</time>
+        <a href="/2019/12/25/Cron表达式/" class="archive-article-date">
+  	<time datetime="2019-12-24T19:01:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-24</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>小程序<br>发布流程，大概分三个大步骤：</p>
+        <p>[toc]</p>
+<h3 id="1-Cron表达式介绍"><a href="#1-Cron表达式介绍" class="headerlink" title="1. Cron表达式介绍"></a>1. Cron表达式介绍</h3><p>​    Cron表达式是一个字符串，字符串以5或6个空格隔开，分为6或7个域，每一个域代表一个含义。</p>
+<h3 id="2-如何使用"><a href="#2-如何使用" class="headerlink" title="2. 如何使用"></a>2. 如何使用</h3><ul>
+<li><p>语法格式：</p>
 <ul>
-<li>上传代码</li>
-<li>提交审核</li>
-<li>发布版本</li>
-</ul>
-</blockquote>
-<a id="more"></a>
-<h3 id="小程序发布的流程"><a href="#小程序发布的流程" class="headerlink" title="小程序发布的流程"></a>小程序发布的流程</h3><p><strong>步骤：</strong></p>
-<h6 id="1-在开发者工具，点击代码上传"><a href="#1-在开发者工具，点击代码上传" class="headerlink" title="1. 在开发者工具，点击代码上传"></a>1. 在开发者工具，点击代码<code>上传</code></h6><p><img src="https://upload-images.jianshu.io/upload_images/1303496-2ebc564000c0c94f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="代码上传"><br>然后填写版本信息<br><img src="https://upload-images.jianshu.io/upload_images/1303496-3811ad6e78b9ebd4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
-<h6 id="2-登录微信公众平台并访问小程序首页"><a href="#2-登录微信公众平台并访问小程序首页" class="headerlink" title="2. 登录微信公众平台并访问小程序首页"></a>2. 登录微信公众平台并访问小程序首页</h6><p>确认填写好相关小程序信息后，点击<code>前往发布</code>按钮<br><img src="https://upload-images.jianshu.io/upload_images/1303496-7131fd92bcac8322.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="前往发布"></p>
-<p>点击<code>提交审核</code>，填写信息。<br><img src="https://upload-images.jianshu.io/upload_images/1303496-dff6416be5adfb53.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="提交审核（1）"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/1303496-8c05d28e69b0e2a9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="提交审核（2）"></p>
-<h6 id="3-审核通过后，点击提交发布"><a href="#3-审核通过后，点击提交发布" class="headerlink" title="3. 审核通过后，点击提交发布"></a>3. 审核通过后，点击<code>提交发布</code></h6><p><img src="https://upload-images.jianshu.io/upload_images/1303496-f3cc600532fb4700.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="发布"></p>
-<p>至此，发布流程完成。</p>
-<hr>
-<p>提交还是很简单的，但是涉及到审核通过问题，那么我们需要做些什么来提高通过率呢？</p>
-<p>之前虽然没有提交过，但是听说过审核比较严格，比如：</p>
-<ul>
-<li><p>不能出现测试数据</p>
+<li>Seconds Minutes Hours DayofMonth Month DayofWeek Year</li>
+<li>Seconds Minutes Hours DayofMonth Month DayofWeek<a id="more"></a>
 <blockquote>
-<p>至少不能一眼看出来就是测试的数据信息，类似商品名称，你写个测试商品，那估计就要打回来了。</p>
+<p>翻译一下</p>
+<p>格式：[秒]  [分]  [小时]  [日]  [月]  [周]  [年]</p>
+<p>格式说明：</p>
+<table>
+<thead>
+<tr>
+<th align="center">位置</th>
+<th align="center">时间域名</th>
+<th align="center">是否必须</th>
+<th align="center">允许值</th>
+<th align="left">允许通配符</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">秒</td>
+<td align="center">是</td>
+<td align="center">0-59</td>
+<td align="left">, - * /</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">分</td>
+<td align="center">是</td>
+<td align="center">0-59</td>
+<td align="left">, - * /</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">小时</td>
+<td align="center">是</td>
+<td align="center">0-23</td>
+<td align="left">, - * /</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">日</td>
+<td align="center">是</td>
+<td align="center">1-31</td>
+<td align="left">, - * / ? L W C</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">月</td>
+<td align="center">是</td>
+<td align="center">1-12</td>
+<td align="left">, - * /</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center">周</td>
+<td align="center">是</td>
+<td align="center">1-7或MON-SUN</td>
+<td align="left">, - * / ? L # C</td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td align="center">年</td>
+<td align="center">否</td>
+<td align="center">empty或1970-2099</td>
+<td align="left">, - * /</td>
+</tr>
+</tbody></table>
 </blockquote>
 </li>
-<li><p>要让审核人员完整体验程序</p>
-<blockquote>
-<p>所以有登录限制什么的，要提供测试账号。</p>
-</blockquote>
+</ul>
+</li>
+<li><p>每一个域，可出现的字符如下： </p>
+<ul>
+<li><p><strong>Seconds</strong></p>
+<p>可出现<code>, - * /</code>四个字符，有效范围为0-59的整数 </p>
+</li>
+<li><p><strong>Minutes</strong></p>
+<p>可出现<code>, - * /</code>四个字符，有效范围为0-59的整数 </p>
+</li>
+<li><p><strong>Hours</strong></p>
+<p>可出现<code>, - * /</code>四个字符，有效范围为0-23的整数 </p>
+</li>
+<li><p><strong>DayofMonth</strong></p>
+<p>可出现<code>, - * / ? L W C</code>八个字符，有效范围为0-31的整数 </p>
+</li>
+<li><p><strong>Month</strong></p>
+<p>可出现<code>, - * /</code>四个字符，有效范围为1-12的整数或JAN-DEC </p>
+</li>
+<li><p><strong>DayofWeek</strong></p>
+<p>可出现<code>, - * / ? L C #</code>8个字符，有效范围为1-7的整数或SUN-SAT两个范围。1表示星期天，2表示星期一， 依次类推 （1~7 1=SUN 或 SUN，MON，TUE，WED，THU，FRI，SAT）</p>
+</li>
+<li><p><strong>Year</strong></p>
+<p>可出现<code>, - * /</code>四个字符，有效范围为1970-2099年</p>
 </li>
 </ul>
-<hr>
-<p>第一点我有注意，用的数据都是模拟真实的，估计没问题。<br>然后到了完整体验这块，我找了半天，愣是没找到让提交测试账号的地方。</p>
-<p>心塞。<br><img src="https://upload-images.jianshu.io/upload_images/1303496-fb78d31df4bc8d45.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="心塞"><br>去微信开放社区找答案。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/1303496-aa9465a9497a2bbd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="带测试账号提交的界面"><br><img src="https://upload-images.jianshu.io/upload_images/1303496-dd975bf5a90c20c5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="微信开放社区"><br>从图中可以得知，上述提交审核界面，带有要求提供测试账号的地方，是在审核被退回的情况下，再次提交才会有。</p>
-<p>我们需要在官方人员说的<code>版本描述处</code>填写相关信息。<br>即：<br><img src="https://upload-images.jianshu.io/upload_images/1303496-eac74424eb80e70b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="版本描述处"><br><img src="https://upload-images.jianshu.io/upload_images/1303496-06f3fd978b125103.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="版本管理"></p>
-<p>ok，到此就只要等待审核通过了。<br><img src="https://upload-images.jianshu.io/upload_images/1303496-da54f6f34aaff37a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="美滋滋"></p>
+</li>
+</ul>
+<ul>
+<li><p>每一个域都使用数字，但还可以出现如下特殊字符，它们的含义是：</p>
+<ul>
+<li><p><strong>*</strong></p>
+<p>表示匹配该域的任意值，假如在Minutes域使用*, 即表示每分钟都会触发事件。</p>
+</li>
+<li><p><strong>?</strong></p>
+<p>只能用在DayofMonth和DayofWeek两个域。它也匹配域的任意值，但实际不会。因为DayofMonth和 DayofWeek会相互影响。例如想在每月的20日触发调度，不管20日到底是星期几，则只能使用如下写法： <code>13 13 15 20 * ?</code>, 其中最后一位只能用？，而不能使用*，如果使用*表示不管星期几都会触发，实际上并不是这样。 </p>
+</li>
+<li><p><strong>-</strong></p>
+<p>表示范围，例如在Minutes域使用5-20，表示从5分到20分钟每分钟触发一次 。</p>
+</li>
+<li><p><strong>/</strong></p>
+<p>表示起始时间开始触发，然后每隔固定时间触发一次，例如在Minutes域使用5/20,则意味着5分钟触发一次，而25，45等分别触发一次，其中20是间隔时长。</p>
+</li>
+<li><p><strong>,</strong></p>
+<p>  表示列出枚举值值。例如：在Minutes域使用5,20，则意味着在5和20分每分钟触发一次。 </p>
+</li>
+<li><p><strong>L</strong></p>
+<p>表示最后，只能出现在DayofWeek和DayofMonth域，如果在DayofWeek域使用5L,意味着在最后的一个星期四触发。 </p>
+</li>
+<li><p><strong>W</strong></p>
+<p>表示有效工作日(周一到周五),只能出现在DayofMonth域，系统将在离指定日期的最近的有效工作日触发事件。例如：在 DayofMonth使用5W，如果5日是星期六，则将在最近的工作日：星期五，即4日触发。如果5日是星期天，则在6日(周一)触发；如果5日在星期一 到星期五中的一天，则就在5日触发。另外一点，W的最近寻找不会跨过月份。</p>
+</li>
+<li><p><strong>LW</strong></p>
+<p>这两个字符可以连用，表示在某个月最后一个工作日，即最后一个星期五。 </p>
+</li>
+<li><p><strong>#</strong></p>
+<p>用于确定每个月第几个星期几，只能出现在DayofWeek域。例如在4#2，表示某月的第二个星期三（注意星期三用数字是4表示）。</p>
+</li>
+<li><p><strong>C</strong></p>
+<p>允许在日期域和星期域出现。这个字符依靠一个指定的“日历”。也就是说这个表达式的值依赖于相关的“日历”的计算结果，如果没有“日历”关联，则等价于所有包含的“日历”。如：日期域是“5C”表示关联“日历”中第一天，或者这个月开始的第一天的后5天。星期域是“1C”表示关联“日历”中第一天，或者星期的第一天的后1天，也就是周日的后一天（周一）</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-一些例子"><a href="#3-一些例子" class="headerlink" title="3. 一些例子"></a>3. 一些例子</h3><p>举几个例子: </p>
+<blockquote>
+<p>以下例子最好自己测验一下，然后再对答案修改，可以快速加深印象哦。</p>
+</blockquote>
+<p><code>0 0 2 1 * ? *</code> 表示在每月的1日的凌晨2点调度任务 </p>
+<p><code>0 15 10 ? * MON-FRI</code> 表示周一到周五每天上午10:15执行</p>
+<p><code>0 15 10 ? 6L 2002-2006</code> 表示2002-2006年的每个月的最后一个星期五上午10:15执行</p>
+<p><code>0 0 10,14,16 * * ?</code> 每天上午10点，下午2点，4点 </p>
+<p><code>0 0/30 9-17 * * ?</code> 朝九晚五工作时间内每半小时 </p>
+<p><code>0 0 12 ? * WED</code> 表示每个星期三中午12点 </p>
+<p><code>0 0 12 * * ?</code> 每天中午12点触发 </p>
+<p><code>0 15 10 ? * *</code> 每天上午10:15触发 </p>
+<p><code>0 15 10 * * ?</code> 每天上午10:15触发 </p>
+<p><code>0 15 10 * * ? *</code> 每天上午10:15触发 </p>
+<p><code>0 15 10 * * ? 2005</code> 2005年的每天上午10:15触发 </p>
+<p><code>0 * 14 * * ?</code> 在每天下午2点到下午2:59期间的每1分钟触发 </p>
+<p><code>0 0/5 14 * * ?</code> 在每天下午2点到下午2:55期间的每5分钟触发 </p>
+<p><code>0 0/5 14,18 * * ?</code> 在每天下午2点到2:55期间和下午6点到6:55期间的每5分钟触发 </p>
+<p><code>0 0-5 14 * * ?</code> 在每天下午2点到下午2:05期间的每1分钟触发 </p>
+<p><code>0 10,44 14 ? 3 WED</code> 每年三月的星期三的下午2:10和2:44触发 </p>
+<p><code>0 15 10 ? * MON-FRI</code> 周一至周五的上午10:15触发 </p>
+<p><code>0 15 10 15 * ?</code> 每月15日上午10:15触发 </p>
+<p><code>0 15 10 L * ?</code> 每月最后一日的上午10:15触发 </p>
+<p><code>0 15 10 ? * 6L</code> 每月的最后一个星期五上午10:15触发 </p>
+<p><code>0 15 10 ? * 6L 2002-2005</code> 2002年至2005年的每月的最后一个星期五上午10:15触发 </p>
+<p><code>0 15 10 ? * 6#3</code> 每月的第三个星期五上午10:15触发</p>
+<h3 id="4-再次加深理解"><a href="#4-再次加深理解" class="headerlink" title="4. 再次加深理解"></a>4. 再次加深理解</h3><blockquote>
+<p>只是巩固一下，可以不看</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">有些子表达式能包含一些范围或列表</span><br><span class="line"></span><br><span class="line">例如：子表达式（天（星期））可以为 “MON-FRI”，“MON，WED，FRI”，“MON-WED,SAT”</span><br><span class="line"></span><br><span class="line">“*”字符代表所有可能的值</span><br><span class="line"></span><br><span class="line">因此，“*”在子表达式（月）里表示每个月的含义，“*”在子表达式（天（星期））表示星期的每一天</span><br><span class="line"></span><br><span class="line">“/”字符用来指定数值的增量 </span><br><span class="line"></span><br><span class="line">例如：在子表达式（分钟）里的“<span class="number">0</span>/<span class="number">15</span>”表示从第<span class="number">0</span>分钟开始，每<span class="number">15</span>分钟 </span><br><span class="line"></span><br><span class="line">在子表达式（分钟）里的“<span class="number">3</span>/<span class="number">20</span>”表示从第<span class="number">3</span>分钟开始，每<span class="number">20</span>分钟（它和“<span class="number">3</span>，<span class="number">23</span>，<span class="number">43</span>”）的含义一样</span><br><span class="line"></span><br><span class="line">“？”字符仅被用于天（月）和天（星期）两个子表达式，表示不指定值 </span><br><span class="line"></span><br><span class="line">当<span class="number">2</span>个子表达式其中之一被指定了值以后，为了避免冲突，需要将另一个子表达式的值设为“？”</span><br><span class="line"></span><br><span class="line">“L” 字符仅被用于天（月）和天（星期）两个子表达式，它是单词“last”的缩写 </span><br><span class="line"></span><br><span class="line">但是它在两个子表达式里的含义是不同的。 </span><br><span class="line"></span><br><span class="line">在天（月）子表达式中，“L”表示一个月的最后一天 </span><br><span class="line"></span><br><span class="line">在天（星期）自表达式中，“L”表示一个星期的最后一天，也就是SAT</span><br><span class="line"></span><br><span class="line">如果在“L”前有具体的内容，它就具有其他的含义了</span><br><span class="line"></span><br><span class="line">例如：“<span class="number">6L</span>”表示这个月的倒数第６天，“FRIL”表示这个月的最一个星期五 </span><br><span class="line"></span><br><span class="line">注意：在使用“L”参数时，不要指定列表或范围，因为这会导致问题</span><br><span class="line"></span><br><span class="line">字段 允许值 允许的特殊字符 </span><br><span class="line"></span><br><span class="line">秒 <span class="number">0</span>-<span class="number">59</span> , - * / </span><br><span class="line"></span><br><span class="line">分 <span class="number">0</span>-<span class="number">59</span> , - * / </span><br><span class="line"></span><br><span class="line">小时 <span class="number">0</span>-<span class="number">23</span> , - * / </span><br><span class="line"></span><br><span class="line">日期 <span class="number">1</span>-<span class="number">31</span> , - * ? / L W C </span><br><span class="line"></span><br><span class="line">月份 <span class="number">1</span>-<span class="number">12</span> 或者 JAN-DEC , - * / </span><br><span class="line"></span><br><span class="line">星期 1-7 或者 SUN-SAT , - * ? / L C # </span><br><span class="line"></span><br><span class="line">年（可选） 留空, <span class="number">1970</span>-<span class="number">2099</span> , - * /</span><br><span class="line"></span><br><span class="line"> Cron表达式范例：</span><br><span class="line"></span><br><span class="line">​         每隔<span class="number">5</span>秒执行一次：*/<span class="number">5</span> * * * * ?</span><br><span class="line"></span><br><span class="line">​         每隔<span class="number">1</span>分钟执行一次：<span class="number">0</span> */<span class="number">1</span> * * * ?</span><br><span class="line"></span><br><span class="line">​         每天<span class="number">23</span>点执行一次：<span class="number">0</span> <span class="number">0</span> <span class="number">23</span> * * ?</span><br><span class="line"></span><br><span class="line">​         每天凌晨<span class="number">1</span>点执行一次：<span class="number">0</span> <span class="number">0</span> <span class="number">1</span> * * ?</span><br><span class="line"></span><br><span class="line">​         每月<span class="number">1</span>号凌晨<span class="number">1</span>点执行一次：<span class="number">0</span> <span class="number">0</span> <span class="number">1</span> <span class="number">1</span> * ?</span><br><span class="line"></span><br><span class="line">​         每月最后一天<span class="number">23</span>点执行一次：<span class="number">0</span> <span class="number">0</span> <span class="number">23</span> L * ?</span><br><span class="line"></span><br><span class="line">​         每周星期六凌晨<span class="number">1</span>点实行一次：<span class="number">0</span> <span class="number">0</span> <span class="number">1</span> ? * L</span><br><span class="line"></span><br><span class="line">​         在<span class="number">26</span>分、<span class="number">29</span>分、<span class="number">33</span>分执行一次：<span class="number">0</span> <span class="number">26</span>,<span class="number">29</span>,<span class="number">33</span> * * * ?</span><br><span class="line"></span><br><span class="line">​         每天的<span class="number">0</span>点、<span class="number">13</span>点、<span class="number">18</span>点、<span class="number">21</span>点都执行一次：<span class="number">0</span> <span class="number">0</span> <span class="number">0</span>,<span class="number">13</span>,<span class="number">18</span>,<span class="number">21</span> * * ?</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-小结"><a href="#5-小结" class="headerlink" title="5.小结"></a>5.小结</h3><p>​    这些笔记是在网上整理得来，通过上面的练习，相信基本的cron表达式大家已经掌握的七七八八了。<br>​    然后就是，希望有需要的小伙伴，可以把执行时间要求留言评论，大家一起再次加深印象，这样我们也会有更多的收获。:smile:</p>
 
       
 
@@ -248,7 +367,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">微信小程序</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Cron</a>
         		</li>
       		
 		</ul>
@@ -304,7 +423,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://sunfishfr.github.io/2019/08/26/【微信小程序】发布流程及发布审核时如何提供测试账号/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://sunfishfr.github.io/2019/12/25/Cron表达式/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -318,18 +437,9 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2019/08/27/百度搜索有广告？不存在的。/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          百度搜索有广告？不存在的。
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/08/23/【微信小程序】我们来聊聊用vscode开发工具/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">【微信小程序】我们来聊聊用vscode开发工具</div>
+    <a href="/2019/09/13/【闲聊】中秋节，你们公司发了啥？/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">【闲聊】中秋节，你们公司发了啥？</div>
       <i class="icon-circle-right"></i>
     </a>
   
